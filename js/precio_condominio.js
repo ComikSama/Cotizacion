@@ -8,23 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
     var placasInput1 = document.getElementById("1-placas");
     var postesInput1 = document.getElementById("1-postes");
     var precioElement1 = document.getElementById("1-precio");
-    var precioMaterial1 = 0; // Valor por defecto para el material
-    var precioPoste1 = 48000; // Valor por defecto para el poste (puedes cambiar este valor)
+    var precioMaterial1 = 0; 
+    var precioPoste1 = 48000; 
 
-    // Precios de los materiales
     var preciosMateriales1 = {
         "Aluminio Compuesto": 88500,
         "Sintra PVC": 68500
     };
 
-    // Precios de instalación
     var preciosInstalacion1 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
         "Solo Entrega": "(SOLO ENTREGA)"
     };
 
-    // Función para calcular y actualizar el precio
 function actualizarPrecio1() {
     var materialSeleccionado1 = obtenerSeleccion1(materialRadios1);
     var instalacionSeleccionada1 = obtenerSeleccion1(instalacionRadios1);
@@ -32,7 +29,7 @@ function actualizarPrecio1() {
     precioMaterial1 = preciosMateriales1[materialSeleccionado1] || 0;
     var precioInstalacion1 = preciosInstalacion1[instalacionSeleccionada1] || "";
     
-    // Obtén el nombre del material seleccionado
+    
     var material1 = "";
     if (materialSeleccionado1) {
         material1 = materialSeleccionado1;
@@ -40,7 +37,6 @@ function actualizarPrecio1() {
 
     cantidadPlacas1 = parseInt(placasInput1.value) || 0;
 
-    // Verifica si el material seleccionado es "Sintra PVC"
     if (materialSeleccionado1 === "Sintra PVC") {
         postesInput1.value = "0"; // Establece la cantidad de postes en 0
         postesInput1.disabled = true; // Deshabilita el campo de entrada de postes
@@ -50,7 +46,6 @@ function actualizarPrecio1() {
 
     cantidadPostes1 = parseInt(postesInput1.value) || 0;
 
-    // Calcula el precio total considerando la lógica condicional
     precioTotal1 = (precioPoste1 * cantidadPostes1) + (precioMaterial1 * cantidadPlacas1);
     
     precioElement1.innerHTML = "Valor por Señalética en " + material1 + ": $" + precioMaterial1 + "<br>";
@@ -61,20 +56,16 @@ function actualizarPrecio1() {
 
     precioElement1.innerHTML += "<hr>Total Sección: $" + precioTotal1 + " (IVA Incluido)";
     
-    // Alínea el texto a la derecha
     precioElement1.style.textAlign = "right";
 
-    // Actualiza el valor del atributo 'value' de 1-material-valor para ambos campos ocultos
     var materialValorInputs1 = document.querySelectorAll('input[name="1-material-valor"]');
     materialValorInputs1.forEach(function(materialValorInput1) {
         materialValorInput1.value = precioMaterial1;
     });
 
-    // Llama a la función para actualizar el precio total global
     actualizarPrecioTotalGlobal();
 }
 
-    // Función para obtener la opción seleccionada de un grupo de radio buttons
     function obtenerSeleccion1(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -84,7 +75,6 @@ function actualizarPrecio1() {
         return "";
     }
 
-    // Agrega eventos de cambio a los grupos de radio buttons
     materialRadios1.forEach(function(radio) {
         radio.addEventListener("change", actualizarPrecio1);
     });
@@ -93,11 +83,9 @@ function actualizarPrecio1() {
         radio.addEventListener("change", actualizarPrecio1);
     });
 
-    // Agrega eventos de cambio a los campos de entrada de placas y postes
     placasInput1.addEventListener("input", actualizarPrecio1);
     postesInput1.addEventListener("input", actualizarPrecio1);
 
-    // Llama a la función para calcular el precio inicial
     actualizarPrecio1();
 
     //--------------------------------------------------------------------------------//
@@ -109,22 +97,19 @@ function actualizarPrecio1() {
     var instalacionRadios2 = document.querySelectorAll('input[name="2-instalar"]');
     var placasInput2 = document.getElementById("2-placas");
     var precioElement2 = document.getElementById("2-precio");
-    var precioMaterial2 = 0; // Valor por defecto para el material
-
-    // Precios de los materiales
+    var precioMaterial2 = 0; 
+    
     var preciosMateriales2 = {
         //"Aluminio Compuesto": 88500,
         "Sintra PVC": 9850
     };
 
-    // Precios de instalación
     var preciosInstalacion2 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
         "Solo Entrega": "(SOLO ENTREGA)"
     };
 
-    // Función para calcular y actualizar el precio
     function actualizarPrecio2() {
         var materialSeleccionado2 = obtenerSeleccion2(materialRadios2);
         var instalacionSeleccionada2 = obtenerSeleccion2(instalacionRadios2);
@@ -132,7 +117,6 @@ function actualizarPrecio1() {
         precioMaterial2 = preciosMateriales2[materialSeleccionado2] || 0;
         var precioInstalacion2 = preciosInstalacion2[instalacionSeleccionada2] || "";
         
-        // Obtén el nombre del material seleccionado
         var material2 = "";
         if (materialSeleccionado2) {
             material2 = materialSeleccionado2;
@@ -144,20 +128,16 @@ function actualizarPrecio1() {
         precioElement2.innerHTML = "Valor por Señalética en " + material2 + ": $" + precioMaterial2 + "<br> <hr>" +
             "Total Sección: $" + precioTotal2  + " (IVA Incluido)" ;
 
-            // Alínea el texto a la derecha
         precioElement2.style.textAlign = "right";
 
-        // Actualiza el valor del atributo 'value' de 2-material-valor para ambos campos ocultos
         var materialValorInputs2 = document.querySelectorAll('input[name="2-material-valor"]');
         materialValorInputs2.forEach(function(materialValorInput2) {
             materialValorInput2.value = precioMaterial2;
         });
 
-        // Llama a la función para actualizar el precio total global
         actualizarPrecioTotalGlobal();
     }
 
-    // Función para obtener la opción seleccionada de un grupo de radio buttons
     function obtenerSeleccion2(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -167,7 +147,6 @@ function actualizarPrecio1() {
         return "";
     }
 
-    // Agrega eventos de cambio a los grupos de radio buttons
     materialRadios2.forEach(function(radio) {
         radio.addEventListener("change", actualizarPrecio2);
     });
@@ -176,10 +155,8 @@ function actualizarPrecio1() {
         radio.addEventListener("change", actualizarPrecio2);
     });
 
-    // Agrega eventos de cambio a los campos de entrada de placas y postes
     placasInput2.addEventListener("input", actualizarPrecio2);
 
-    // Llama a la función para calcular el precio inicial
     actualizarPrecio2();
 
 
@@ -192,23 +169,19 @@ function actualizarPrecio1() {
     var instalacionRadios3 = document.querySelectorAll('input[name="3-instalar"]');
     var placasInput3 = document.getElementById("3-placas");
     var precioElement3 = document.getElementById("3-precio");
-    var precioMedida3 = 1
-    ; // Valor por defecto para el medida
-
-    // Precios de las medidas
+    var precioMedida3 = 0;
+    
     var preciosMedidas3 = {
         "20cm x 30cm": 9580,
         "40cm x 60cm": 18500
     };
 
-    // Precios de instalación
     var preciosInstalacion3 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
         "Solo Entrega": "(SOLO ENTREGA)"
     };
 
-    // Función para calcular y actualizar el precio
     function actualizarPrecio3() {
         var medidaSeleccionada3 = obtenerSeleccion3(medidasRadios3);
         var instalacionSeleccionada3 = obtenerSeleccion3(instalacionRadios3);
@@ -216,7 +189,6 @@ function actualizarPrecio1() {
         var precioMedida3 = preciosMedidas3[medidaSeleccionada3] || 0;
         var precioInstalacion3 = preciosInstalacion3[instalacionSeleccionada3] || "";
         
-        // Obtén las medidas seleccionadas
         var medida3 = "";
         if (medidaSeleccionada3) {
             medida3 = medidaSeleccionada3;
@@ -228,20 +200,16 @@ function actualizarPrecio1() {
         precioElement3.innerHTML = "Valor por Señalética Tamaño " + medida3 + ": $" + precioMedida3 + "<br> <hr>" +
             "Total Sección: $" + precioTotal3 + " (IVA Incluido)" ;
 
-            // Alínea el texto a la derecha
         precioElement2.style.textAlign = "right";
         
-        // Actualiza el valor del atributo 'value' de 3-medidas-valor para ambos campos ocultos
         var medidaValorInputs3 = document.querySelectorAll('input[name="3-medidas-valor"]');
         medidaValorInputs3.forEach(function(medidaValorInput3) {
             medidaValorInput3.value = precioMedida3;
         });
 
-        // Llama a la función para actualizar el precio total global
         actualizarPrecioTotalGlobal();
     }
 
-    // Función para obtener la opción seleccionada de un grupo de radio buttons
     function obtenerSeleccion3(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -252,7 +220,6 @@ function actualizarPrecio1() {
     }
 
 
-    // Agrega eventos de cambio a los grupos de radio buttons
     medidasRadios3.forEach(function(radio) {
         radio.addEventListener("change", actualizarPrecio3);
     });
@@ -261,11 +228,9 @@ function actualizarPrecio1() {
         radio.addEventListener("change", actualizarPrecio3);
     });
 
-    // Agrega eventos de cambio a los campos de entrada de placas y postes
     placasInput3.addEventListener("input", actualizarPrecio3);
 
 
-    // Llama a la función para calcular el precio inicial
     actualizarPrecio3();
 
     //--------------------------------------------------------------------------------//
@@ -277,22 +242,19 @@ function actualizarPrecio1() {
     var instalacionRadios4 = document.querySelectorAll('input[name="4-instalar"]');
     var placasInput4 = document.getElementById("4-placas");
     var precioElement4 = document.getElementById("4-precio");
-    var precioMedida4 = 0; // Valor por defecto para el medida
-
-    // Precios de las medidas para la sección 4
+    var precioMedida4 = 0;
+    
     var preciosMedidas4 = {
         "6cm x 6cm": 950,
         "Otra Medida": 1000
     };
 
-    // Precios de instalación para la sección 4
     var preciosInstalacion4 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
         "Solo Entrega": "(SOLO ENTREGA)"
     };
 
-    // Función para calcular y actualizar el precio para la sección 4
     function actualizarPrecio4() {
         var medidaSeleccionada4 = obtenerSeleccion4(medidasRadios4);
         var instalacionSeleccionada4 = obtenerSeleccion4(instalacionRadios4);
@@ -300,7 +262,6 @@ function actualizarPrecio1() {
         var precioMedida4 = preciosMedidas4[medidaSeleccionada4] || 0;
         var precioInstalacion4 = preciosInstalacion4[instalacionSeleccionada4] || "";
         
-        // Obtén las medidas seleccionadas
         var medida4 = "";
         if (medidaSeleccionada4) {
             medida4 = medidaSeleccionada4;
@@ -312,20 +273,17 @@ function actualizarPrecio1() {
         precioElement4.innerHTML = "Valor por Señalética Tamaño " + medida4 + ": $" + precioMedida4 + "<br> <hr>" +
             "Total Sección: $" + precioTotal4 + " (IVA Incluido)" ;
 
-        // Alínea el texto a la derecha
+
         precioElement4.style.textAlign = "right";
 
-        // Actualiza el valor del atributo 'value' de 4-medidas-valor para ambos campos ocultos
         var medidaValorInputs4 = document.querySelectorAll('input[name="4-medidas-valor"]');
         medidaValorInputs4.forEach(function(medidaValorInput4) {
             medidaValorInput4.value = precioMedida4;
         });
 
-        // Llama a la función para actualizar el precio total global
         actualizarPrecioTotalGlobal();
     }
 
-    // Función para obtener la opción seleccionada de un grupo de radio buttons
     function obtenerSeleccion4(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -335,7 +293,6 @@ function actualizarPrecio1() {
         return "";
     }
 
-    // Agrega eventos de cambio a los grupos de radio buttons para la sección 4
     medidasRadios4.forEach(function(radio) {
         radio.addEventListener("change", actualizarPrecio4);
     });
@@ -344,10 +301,8 @@ function actualizarPrecio1() {
         radio.addEventListener("change", actualizarPrecio4);
     });
 
-    // Agrega eventos de cambio a los campos de entrada de placas y postes
     placasInput4.addEventListener("input", actualizarPrecio4);
 
-    // Llama a la función para calcular el precio inicial para la sección 4
     actualizarPrecio4();
 
     //--------------------------------------------------------------------------------//
@@ -359,21 +314,18 @@ function actualizarPrecio1() {
     var instalacionRadios5 = document.querySelectorAll('input[name="5-instalar"]');
     var placasInput5 = document.getElementById("5-placas");
     var precioElement5 = document.getElementById("5-precio");
-    var precioMedida5 = 0; // Valor por defecto para el medida
+    var precioMedida5 = 0; 
 
-    // Precios de las medidas para la sección 5
     var preciosMedidas5 = {
         "30cm x 20cm": 9850
     };
 
-    // Precios de instalación para la sección 5
     var preciosInstalacion5 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
         "Solo Entrega": "(SOLO ENTREGA)"
     };
 
-    // Función para calcular y actualizar el precio para la sección 5
     function actualizarPrecio5() {
         var medidaSeleccionada5 = obtenerSeleccion5(medidasRadios5);
         var instalacionSeleccionada5 = obtenerSeleccion5(instalacionRadios5);
@@ -381,7 +333,6 @@ function actualizarPrecio1() {
         var precioMedida5 = preciosMedidas5[medidaSeleccionada5] || 0;
         var precioInstalacion5 = preciosInstalacion5[instalacionSeleccionada5] || "";
         
-        // Obtén las medidas seleccionadas
         var medida5 = "";
         if (medidaSeleccionada5) {
             medida5 = medidaSeleccionada5;
@@ -393,20 +344,16 @@ function actualizarPrecio1() {
         precioElement5.innerHTML = "Valor por Señalética Tamaño " + medida5 + ": $" + precioMedida5 + "<br> <hr>" +
             "Total Sección: $" + precioTotal5 + " (IVA Incluido)" ;
 
-        // Alínea el texto a la derecha
         precioElement5.style.textAlign = "right";
 
-        // Actualiza el valor del atributo 'value' de 5-medidas-valor para ambos campos ocultos
         var medidaValorInputs5 = document.querySelectorAll('input[name="5-medidas-valor"]');
         medidaValorInputs5.forEach(function(medidaValorInput5) {
             medidaValorInput5.value = precioMedida5;
         });
 
-        // Llama a la función para actualizar el precio total global
         actualizarPrecioTotalGlobal();
     }
 
-    // Función para obtener la opción seleccionada de un grupo de radio buttons
     function obtenerSeleccion5(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -425,10 +372,8 @@ function actualizarPrecio1() {
         radio.addEventListener("change", actualizarPrecio5);
     });
 
-    // Agrega eventos de cambio a los campos de entrada de placas para la sección 5
     placasInput5.addEventListener("input", actualizarPrecio5);
 
-    // Llama a la función para calcular el precio inicial para la sección 5
     actualizarPrecio5();
 
     //--------------------------------------------------------------------------------//
@@ -440,14 +385,11 @@ function actualizarPrecio1() {
     var instalacionRadios6 = document.querySelectorAll('input[name="6-instalar"]');
     var placasInput6 = document.getElementById("6-placas");
     var precioElement6 = document.getElementById("6-precio");
-    var precioMaterial6 = 0; // Valor por defecto para el material
-
-    // Precios de los materiales para la sección 6
+    var precioMaterial6 = 0; 
     var preciosMateriales6 = {
         "Sintra Pvc": 18500
     };
 
-    // Precios de instalación para la sección 6
     var preciosInstalacion6 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
@@ -2589,7 +2531,6 @@ actualizarPrecio28();
         actualizarPrecioTotalGlobal();
     }
 
-    // Función para obtener la opción seleccionada de un grupo de radio buttons
     function obtenerSeleccion29(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -2599,7 +2540,6 @@ actualizarPrecio28();
         return "";
     }
 
-    // Agrega eventos de cambio a los grupos de radio buttons
     materialRadios29.forEach(function (radio) {
         radio.addEventListener("change", actualizarPrecio29);
     });
@@ -2623,22 +2563,19 @@ actualizarPrecio28();
     var instalacionRadios30 = document.querySelectorAll('input[name="30-instalar"]');
     var placasInput30 = document.getElementById("30-placas");
     var precioElement30 = document.getElementById("30-precio");
-    var precioMaterial30 = 0; // Valor por defecto para el material
+    var precioMaterial30 = 0; 
 
-    // Precios de los materiales
     var preciosMateriales30 = {
         "Acrílico": 398000,
         "Sintra PVC": 378000
     };
 
-    // Precios de instalación
     var preciosInstalacion30 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
         "Solo Entrega": "(SOLO ENTREGA)"
     };
 
-    // Función para calcular y actualizar el precio
     function actualizarPrecio30() {
         var materialSeleccionado30 = obtenerSeleccion30(materialRadios30);
         var instalacionSeleccionada30 = obtenerSeleccion30(instalacionRadios30);
@@ -2646,7 +2583,6 @@ actualizarPrecio28();
         precioMaterial30 = preciosMateriales30[materialSeleccionado30] || 0;
         var precioInstalacion30 = preciosInstalacion30[instalacionSeleccionada30] || "";
 
-        // Obtén el nombre del material seleccionado
         var material30 = "";
         if (materialSeleccionado30) {
             material30 = materialSeleccionado30;
@@ -2658,20 +2594,16 @@ actualizarPrecio28();
         precioElement30.innerHTML = "Valor por Señalética en " + material30 + ": $" + precioMaterial30 + "<br> <hr>" +
             "Total Sección: $" + precioTotal30 + " (IVA Incluido)";
 
-        // Alínea el texto a la derecha
         precioElement30.style.textAlign = "right";
 
-        // Actualiza el valor del atributo 'value' de 30-material-valor para ambos campos ocultos
         var materialValorInputs30 = document.querySelectorAll('input[name="30-material-valor"]');
         materialValorInputs30.forEach(function (materialValorInput30) {
             materialValorInput30.value = precioMaterial30;
         });
 
-        // Llama a la función para actualizar el precio total global
         actualizarPrecioTotalGlobal();
     }
 
-    // Función para obtener la opción seleccionada de un grupo de radio buttons
     function obtenerSeleccion30(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -2680,10 +2612,8 @@ actualizarPrecio28();
         }
         return "";
     }
-    // Llama a la función para calcular el precio inicial
     actualizarPrecio30();
 
-    // Agrega eventos de cambio a los grupos de radio buttons
     materialRadios30.forEach(function (radio) {
         radio.addEventListener("change", actualizarPrecio30);
     });
@@ -2692,7 +2622,6 @@ actualizarPrecio28();
         radio.addEventListener("change", actualizarPrecio30);
     });
 
-    // Agrega eventos de cambio a los campos de entrada de placas y postes
     placasInput30.addEventListener("input", actualizarPrecio30);
 
     
@@ -2706,22 +2635,19 @@ actualizarPrecio28();
     var instalacionRadios31 = document.querySelectorAll('input[name="31-instalar"]');
     var placasInput31 = document.getElementById("31-placas");
     var precioElement31 = document.getElementById("31-precio");
-    var precioMaterial31 = 0; // Valor por defecto para el material
-
-    // Precios de los materiales
+    var precioMaterial31 = 0; 
+    
     var preciosMateriales31 = {
         "Acrílico": 88500,
         "Sintra Pvc": 68500
     };
 
-    // Precios de instalación
     var preciosInstalacion31 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
         "Solo Entrega": "(SOLO ENTREGA)"
     };
 
-    // Función para calcular y actualizar el precio
     function actualizarPrecio31() {
         var materialSeleccionado31 = obtenerSeleccion31(materialRadios31);
         var instalacionSeleccionada31 = obtenerSeleccion31(instalacionRadios31);
@@ -2729,7 +2655,6 @@ actualizarPrecio28();
         precioMaterial31 = preciosMateriales31[materialSeleccionado31] || 0;
         var precioInstalacion31 = preciosInstalacion31[instalacionSeleccionada31] || "";
 
-        // Obtén el nombre del material seleccionado
         var material31 = "";
         if (materialSeleccionado31) {
             material31 = materialSeleccionado31;
@@ -2738,7 +2663,6 @@ actualizarPrecio28();
         cantidadPlacas31 = parseInt(placasInput31.value) || 0;
         precioTotal31 = (precioMaterial31 * cantidadPlacas31);
 
-        // Verifica si el material seleccionado es "Sintra PVC" y ajusta el precio
         if (materialSeleccionado31 === "Sintra PVC") {
             precioMaterial31 = preciosMateriales31["Sintra PVC"] || 0;
         }
@@ -2746,20 +2670,16 @@ actualizarPrecio28();
         precioElement31.innerHTML = "Valor por Señalética en " + material31 + ": $" + precioMaterial31 + "<br> <hr>" +
             "Total Sección: $" + precioTotal31 + " (IVA Incluido)";
 
-        // Alínea el texto a la derecha
         precioElement31.style.textAlign = "right";
 
-        // Actualiza el valor del atributo 'value' de 31-material-valor para ambos campos ocultos
         var materialValorInputs31 = document.querySelectorAll('input[name="31-material-valor"]');
         materialValorInputs31.forEach(function (materialValorInput31) {
             materialValorInput31.value = precioMaterial31;
         });
 
-        // Llama a la función para actualizar el precio total global
         actualizarPrecioTotalGlobal();
     }
 
-    // Función para obtener la opción seleccionada de un grupo de radio buttons
     function obtenerSeleccion31(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -2769,10 +2689,8 @@ actualizarPrecio28();
         return "";
 
     }
-    // Llama a la función para calcular el precio inicial
     actualizarPrecio31();
 
-    // Agrega eventos de cambio a los grupos de radio buttons
     materialRadios31.forEach(function (radio) {
         radio.addEventListener("change", actualizarPrecio31);
     });
@@ -2781,7 +2699,6 @@ actualizarPrecio28();
         radio.addEventListener("change", actualizarPrecio31);
     });
 
-    // Agrega eventos de cambio a los campos de entrada de placas y postes
     placasInput31.addEventListener("input", actualizarPrecio31);
 
     //--------------------------------------------------------------------------------//
@@ -2795,23 +2712,20 @@ actualizarPrecio28();
     var placasInput32 = document.getElementById("32-placas");
     var postesInput32 = document.getElementById("32-postes");
     var precioElement32 = document.getElementById("32-precio");
-    var precioMaterial32 = 0; // Valor por defecto para el material
-    var precioPoste32 = 48000; // Valor por defecto para el poste (puedes cambiar este valor)
+    var precioMaterial32 = 0; 
+    var precioPoste32 = 48000; 
 
-    // Precios de los materiales
     var preciosMateriales32 = {
         "Aluminio Compuesto": 39000,
         "Sintra PVC": 18500
     };
 
-    // Precios de instalación
     var preciosInstalacion32 = {
         "Con Instalación": "(MÁS INSTALACIÓN)",
         "Sin Instalación": "(SIN INSTALACIÓN)",
         "Solo Entrega": "(SOLO ENTREGA)"
     };
 
-    // Función para obtener la selección de radios
     function obtenerSeleccion32(radios) {
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -2821,7 +2735,6 @@ actualizarPrecio28();
         return null; // O un valor por defecto si no hay selección
     }
 
-    // Función para calcular y actualizar el precio
     function actualizarPrecio32() {
         var materialSeleccionado32 = obtenerSeleccion32(materialRadios32);
         var instalacionSeleccionada32 = obtenerSeleccion32(instalacionRadios32);
@@ -2829,7 +2742,6 @@ actualizarPrecio28();
         precioMaterial32 = preciosMateriales32[materialSeleccionado32] || 0;
         var precioInstalacion32 = preciosInstalacion32[instalacionSeleccionada32] || "";
 
-        // Obtén el nombre del material seleccionado
         var material32 = "";
         if (materialSeleccionado32) {
             material32 = materialSeleccionado32;
@@ -2837,7 +2749,6 @@ actualizarPrecio28();
 
         cantidadPlacas32 = parseInt(placasInput32.value) || 0;
 
-        // Verifica si el material seleccionado es "Sintra PVC"
         if (materialSeleccionado32 === "Sintra PVC") {
             postesInput32.value = "0"; // Establece la cantidad de postes en 0
             postesInput32.disabled = true; // Deshabilita el campo de entrada de postes
@@ -2847,7 +2758,6 @@ actualizarPrecio28();
 
         cantidadPostes32 = parseInt(postesInput32.value) || 0;
 
-        // Calcula el precio total considerando la lógica condicional
         precioTotal32 = (precioPoste32 * cantidadPostes32) + (precioMaterial32 * cantidadPlacas32);
 
         precioElement32.innerHTML = "Valor por Señalética en " + material32 + ": $" + precioMaterial32 + "<br>";
@@ -2858,24 +2768,18 @@ actualizarPrecio28();
 
         precioElement32.innerHTML += "<hr>Total Sección: $" + precioTotal32 + " (IVA Incluido)";
 
-        // Alínea el texto a la derecha
         precioElement32.style.textAlign = "right";
 
-        // Actualiza el valor del atributo 'value' de 32-material-valor para ambos campos ocultos
         var materialValorInputs32 = document.querySelectorAll('input[name="32-material-valor"]');
         materialValorInputs32.forEach(function(materialValorInput32) {
             materialValorInput32.value = precioMaterial32;
         });
-
-        // Llama a la función para actualizar el precio total global
         actualizarPrecioTotalGlobal();
 
     }
 
-    // Llama a la función para calcular y actualizar el precio inicialmente
     actualizarPrecio32();
 
-    // Agrega eventos que llamen a actualizarPrecio32() cuando se produzcan cambios
     materialRadios32.forEach(function(radio) {
         radio.addEventListener("change", actualizarPrecio32);
     });
@@ -2889,42 +2793,16 @@ actualizarPrecio28();
 
 //----------------------------------------------------------------------------------------------------//
 
-
-// Función para actualizar el precio total global y mostrarlo en "valorTotal"
 function actualizarPrecioTotalGlobal() {
-    
-    // Suma las placas totales de las secciones
     var placasTotalGlobal = cantidadPlacas1 + cantidadPlacas2 + cantidadPlacas3 + cantidadPlacas4 + cantidadPlacas5 + cantidadPlacas6 + cantidadPlacas7 + cantidadPlacas8 + cantidadPlacas9 + cantidadPlacas10 + cantidadPlacas11 + cantidadPlacas12 + cantidadPlacas13 + cantidadPlacas14 + cantidadPlacas15 + cantidadPlacas16 + cantidadPlacas17 + cantidadPlacas18 + cantidadPlacas19 + cantidadPlacas20 + cantidadPlacas21 + cantidadPlacas22 + cantidadPlacas23 + cantidadPlacas24 + cantidadPlacas25 + cantidadPlacas26 + cantidadPlacas27 + cantidadPlacas28 + cantidadPlacas29 + cantidadPlacas30 + cantidadPlacas31 + cantidadPlacas32;
-
-    // Suma los postes totales de las secciones
     var postesTotalGlobal = cantidadPostes1 + cantidadPostes8 + cantidadPostes10 + cantidadPostes11 + cantidadPostes14 + cantidadPostes15 + cantidadPostes16 + cantidadPostes17 + cantidadPostes18 + cantidadPostes19 + cantidadPostes20 + cantidadPostes28 + cantidadPostes32;
-
-    // Suma los precios totales de las secciones
     var precioTotalGlobal = precioTotal1 + precioTotal2 + precioTotal3 + precioTotal4 + precioTotal5 + precioTotal6 + precioTotal7 + precioTotal8 + precioTotal9 + precioTotal10 + precioTotal11 + precioTotal12 + precioTotal13 + precioTotal14 + precioTotal15 + precioTotal16 + precioTotal17 + precioTotal18 + precioTotal19 + precioTotal20 + precioTotal21 + precioTotal22 + precioTotal23 + precioTotal24 + precioTotal25 + precioTotal26 + precioTotal27 + precioTotal28 + precioTotal29 + precioTotal30 + precioTotal31 + precioTotal32;
-
-    // Actualiza el elemento HTML global "cantidadPlacas"
     var valorTotalElement = document.getElementById("cantidadPlacas");
     valorTotalElement.innerHTML = "<h3>" + placasTotalGlobal + " </h3><h5>AGREGADAS</h5>";
-
-    // Actualiza el elemento HTML global ""
     var valorTotalElement = document.getElementById("cantidadPostes");
     valorTotalElement.innerHTML = "<h3>" + postesTotalGlobal + " </h3><h5>AGREGADOS</h5>";
-    
-    // Actualiza el elemento HTML global "valorTotal"
     var valorTotalElement = document.getElementById("valorTotal");
     valorTotalElement.innerHTML = "<h3>$" + precioTotalGlobal + "</h3><h5>PRECIO IVA INCLUIDO</h5>";
-
-
-    console.log("TOTAL PLACAS: "+placasTotalGlobal);
-    console.log("TOTAL POSTES: "+postesTotalGlobal);
-    console.log("TOTAL PRECIOS: $"+precioTotalGlobal);
-    
 }
-
-
     
-
-
-
 });
-
