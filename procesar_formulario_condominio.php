@@ -18,9 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica1 = $_POST["1-vinilo"];
     $instalacion1 = $_POST["1-instalar"];
     $valor1 = $_POST["1-material-valor"];
-    // Obtener el valor de 1-lugar seleccionado
     $lugarSeleccionado1 = $_POST["1-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar1 en consecuencia
     if ($lugarSeleccionado1 === "OTRO") {
         $lugar1 = $_POST["1-ciudadEspecifica"];
     } else {
@@ -37,9 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica2 = $_POST["2-vinilo"];
     $instalacion2 = $_POST["2-instalar"];
     $valor2 = $_POST["2-material-valor"];
-    // Obtener el valor de 2-lugar seleccionado
     $lugarSeleccionado2 = $_POST["2-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar2 en consecuencia
     if ($lugarSeleccionado2 === "OTRO") {
         $lugar2 = $_POST["2-ciudadEspecifica"];
     } else {
@@ -56,9 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica3 = $_POST["3-vinilo"];
     $instalacion3 = $_POST["3-instalar"];
     $valor3 = $_POST["3-medidas-valor"];
-    // Obtener el valor de 3-lugar seleccionado
     $lugarSeleccionado3 = $_POST["3-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar3 en consecuencia
     if ($lugarSeleccionado3 === "OTRO") {
         $lugar3 = $_POST["3-ciudadEspecifica"];
     } else {
@@ -74,9 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica4 = $_POST["4-vinilo"];
     $instalacion4 = $_POST["4-instalar"];
     $valor4 = $_POST["4-medidas-valor"];
-    // Obtener el valor de 4-lugar seleccionado
     $lugarSeleccionado4 = $_POST["4-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar4 en consecuencia
     if ($lugarSeleccionado4 === "OTRO") {
         $lugar4 = $_POST["4-ciudadEspecifica"];
     } else {
@@ -92,9 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica5 = $_POST["5-vinilo"];
     $instalacion5 = $_POST["5-instalar"];
     $valor5 = $_POST["5-medidas-valor"];
-    // Obtener el valor de 5-lugar seleccionado
     $lugarSeleccionado5 = $_POST["5-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar5 en consecuencia
     if ($lugarSeleccionado5 === "OTRO") {
         $lugar5 = $_POST["5-ciudadEspecifica"];
     } else {
@@ -111,9 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica6 = $_POST["6-vinilo"];
     $instalacion6 = $_POST["6-instalar"];
     $valor6 = $_POST["6-material-valor"];
-    // Obtener el valor de 6-lugar seleccionado
     $lugarSeleccionado6 = $_POST["6-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar6 en consecuencia
     if ($lugarSeleccionado6 === "OTRO") {
         $lugar6 = $_POST["6-ciudadEspecifica"];
     } else {
@@ -130,9 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica7 = $_POST["7-vinilo"];
     $instalacion7 = $_POST["7-instalar"];
     $valor7 = $_POST["7-medidas-valor"];
-    // Obtener el valor de 7-lugar seleccionado
     $lugarSeleccionado7 = $_POST["7-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar7 en consecuencia
     if ($lugarSeleccionado7 === "OTRO") {
         $lugar7 = $_POST["7-ciudadEspecifica"];
     } else {
@@ -149,9 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica8 = $_POST["8-vinilo"];
     $instalacion8 = $_POST["8-instalar"];
     $valor8 = $_POST["8-material-valor"];
-    // Obtener el valor de 8-lugar seleccionado
     $lugarSeleccionado8 = $_POST["8-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar7 en consecuencia
     if ($lugarSeleccionado8 === "OTRO") {
         $lugar8 = $_POST["8-ciudadEspecifica"];
     } else {
@@ -168,9 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica9 = $_POST["9-vinilo"];
     $instalacion9 = $_POST["9-instalar"];
     $valor9 = $_POST["9-material-valor"];
-    // Obtener el valor de 9-lugar seleccionado
     $lugarSeleccionado9 = $_POST["9-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar7 en consecuencia
     if ($lugarSeleccionado9 === "OTRO") {
         $lugar9 = $_POST["9-ciudadEspecifica"];
     } else {
@@ -187,9 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica10 = $_POST["10-vinilo"];
     $instalacion10 = $_POST["10-instalar"];
     $valor10 = $_POST["10-material-valor"];
-    // Obtener el valor de 10-lugar seleccionado
     $lugarSeleccionado10 = $_POST["10-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar10 en consecuencia
     if ($lugarSeleccionado10 === "OTRO") {
         $lugar10 = $_POST["10-ciudadEspecifica"];
     } else {
@@ -206,9 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica11 = $_POST["11-vinilo"];
     $instalacion11 = $_POST["11-instalar"];
     $valor11 = $_POST["11-material-valor"];
-    // Obtener el valor de 11-lugar seleccionado
     $lugarSeleccionado11 = $_POST["11-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar11 en consecuencia
     if ($lugarSeleccionado11 === "OTRO") {
         $lugar11 = $_POST["11-ciudadEspecifica"];
     } else {
@@ -225,9 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica12 = $_POST["12-vinilo"];
     $instalacion12 = $_POST["12-instalar"];
     $valor12 = $_POST["12-material-valor"];
-    // Obtener el valor de 12-lugar seleccionado
     $lugarSeleccionado12 = $_POST["12-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar12 en consecuencia
     if ($lugarSeleccionado12 === "OTRO") {
         $lugar12 = $_POST["12-ciudadEspecifica"];
     } else {
@@ -244,9 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica13 = $_POST["13-vinilo"];
     $instalacion13 = $_POST["13-instalar"];
     $valor13 = $_POST["13-material-valor"];
-    // Obtener el valor de 13-lugar seleccionado
     $lugarSeleccionado13 = $_POST["13-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar13 en consecuencia
     if ($lugarSeleccionado13 === "OTRO") {
         $lugar13 = $_POST["13-ciudadEspecifica"];
     } else {
@@ -263,9 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica14 = $_POST["14-vinilo"];
     $instalacion14 = $_POST["14-instalar"];
     $valor14 = $_POST["14-material-valor"];
-    // Obtener el valor de 14-lugar seleccionado
     $lugarSeleccionado14 = $_POST["14-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar14 en consecuencia
     if ($lugarSeleccionado14 === "OTRO") {
         $lugar14 = $_POST["14-ciudadEspecifica"];
     } else {
@@ -282,9 +254,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica15 = $_POST["15-vinilo"];
     $instalacion15 = $_POST["15-instalar"];
     $valor15 = $_POST["15-material-valor"];
-    // Obtener el valor de 15-lugar seleccionado
     $lugarSeleccionado15 = $_POST["15-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar15 en consecuencia
     if ($lugarSeleccionado15 === "OTRO") {
         $lugar15 = $_POST["15-ciudadEspecifica"];
     } else {
@@ -301,9 +271,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica16 = $_POST["16-vinilo"];
     $instalacion16 = $_POST["16-instalar"];
     $valor16 = $_POST["16-material-valor"];
-    // Obtener el valor de 16-lugar seleccionado
     $lugarSeleccionado16 = $_POST["16-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar16 en consecuencia
     if ($lugarSeleccionado16 === "OTRO") {
         $lugar16 = $_POST["16-ciudadEspecifica"];
     } else {
@@ -320,9 +288,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica17 = $_POST["17-vinilo"];
     $instalacion17 = $_POST["17-instalar"];
     $valor17 = $_POST["17-material-valor"];
-    // Obtener el valor de 17-lugar seleccionado
     $lugarSeleccionado17 = $_POST["17-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar17 en consecuencia
     if ($lugarSeleccionado17 === "OTRO") {
         $lugar17 = $_POST["17-ciudadEspecifica"];
     } else {
@@ -339,9 +305,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica18 = $_POST["18-vinilo"];
     $instalacion18 = $_POST["18-instalar"];
     $valor18 = $_POST["18-material-valor"];
-    // Obtener el valor de 18-lugar seleccionado
     $lugarSeleccionado18 = $_POST["18-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar18 en consecuencia
     if ($lugarSeleccionado18 === "OTRO") {
         $lugar18 = $_POST["18-ciudadEspecifica"];
     } else {
@@ -358,9 +322,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica19 = $_POST["19-vinilo"];
     $instalacion19 = $_POST["19-instalar"];
     $valor19 = $_POST["19-material-valor"];
-    // Obtener el valor de 19-lugar seleccionado
     $lugarSeleccionado19 = $_POST["19-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar19 en consecuencia
     if ($lugarSeleccionado19 === "OTRO") {
         $lugar19 = $_POST["19-ciudadEspecifica"];
     } else {
@@ -377,9 +339,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica20 = $_POST["20-vinilo"];
     $instalacion20 = $_POST["20-instalar"];
     $valor20 = $_POST["20-material-valor"];
-    //Obtener el valor de 20-lugar seleccionado
     $lugarSeleccionado20 = $_POST["20-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar20 en consecuencia
     if ($lugarSeleccionado20 === "OTRO") {
         $lugar20 = $_POST["20-ciudadEspecifica"];
     } else {
@@ -396,9 +356,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica21 = $_POST["21-vinilo"];
     $instalacion21 = $_POST["21-instalar"];
     $valor21 = $_POST["21-material-valor"];
-    //Obtener el valor de 21-lugar seleccionado
     $lugarSeleccionado21 = $_POST["21-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar21 en consecuencia
     if ($lugarSeleccionado21 === "OTRO") {
         $lugar21 = $_POST["21-ciudadEspecifica"];
     } else {
@@ -415,9 +373,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica22 = $_POST["22-vinilo"];
     $instalacion22 = $_POST["22-instalar"];
     $valor22 = $_POST["22-material-valor"];
-    //Obtener el valor de 22-lugar seleccionado
     $lugarSeleccionado22 = $_POST["22-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar22 en consecuencia
     if ($lugarSeleccionado22 === "OTRO") {
         $lugar22 = $_POST["22-ciudadEspecifica"];
     } else {
@@ -434,9 +390,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica23 = $_POST["23-vinilo"];
     $instalacion23 = $_POST["23-instalar"];
     $valor23 = $_POST["23-material-valor"];
-    //Obtener el valor de 23-lugar seleccionado
     $lugarSeleccionado23 = $_POST["23-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar23 en consecuencia
     if ($lugarSeleccionado23 === "OTRO") {
         $lugar23 = $_POST["23-ciudadEspecifica"];
     } else {
@@ -453,9 +407,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica24 = $_POST["24-vinilo"];
     $instalacion24 = $_POST["24-instalar"];
     $valor24 = $_POST["24-material-valor"];
-    //Obtener el valor de 24-lugar seleccionado
     $lugarSeleccionado24 = $_POST["24-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar24 en consecuencia
     if ($lugarSeleccionado24 === "OTRO") {
         $lugar24 = $_POST["24-ciudadEspecifica"];
     } else {
@@ -472,9 +424,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica25 = $_POST["25-vinilo"];
     $instalacion25 = $_POST["25-instalar"];
     $valor25 = $_POST["25-material-valor"];
-    //Obtener el valor de 25-lugar seleccionado
     $lugarSeleccionado25 = $_POST["25-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar25 en consecuencia
     if ($lugarSeleccionado25 === "OTRO") {
         $lugar25 = $_POST["25-ciudadEspecifica"];
     } else {
@@ -491,9 +441,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica26 = $_POST["26-vinilo"];
     $instalacion26 = $_POST["26-instalar"];
     $valor26 = $_POST["26-material-valor"];
-    //Obtener el valor de 26-lugar seleccionado
     $lugarSeleccionado26 = $_POST["26-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar26 en consecuencia
     if ($lugarSeleccionado26 === "OTRO") {
         $lugar26 = $_POST["26-ciudadEspecifica"];
     } else {
@@ -510,9 +458,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica27 = $_POST["27-vinilo"];
     $instalacion27 = $_POST["27-instalar"];
     $valor27 = $_POST["27-material-valor"];
-    //Obtener el valor de 27-lugar seleccionado
     $lugarSeleccionado27 = $_POST["27-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar27 en consecuencia
     if ($lugarSeleccionado27 === "OTRO") {
         $lugar27 = $_POST["27-ciudadEspecifica"];
     } else {
@@ -529,9 +475,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica28 = $_POST["28-vinilo"];
     $instalacion28 = $_POST["28-instalar"];
     $valor28 = $_POST["28-medidas-valor"];
-    //Obtener el valor de 28-lugar seleccionado
     $lugarSeleccionado28 = $_POST["28-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar28 en consecuencia
     if ($lugarSeleccionado28 === "OTRO") {
         $lugar28 = $_POST["28-ciudadEspecifica"];
     } else {
@@ -548,9 +492,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica29 = $_POST["29-vinilo"];
     $instalacion29 = $_POST["29-instalar"];
     $valor29 = $_POST["29-material-valor"];
-    //Obtener el valor de 29-lugar seleccionado
     $lugarSeleccionado29 = $_POST["29-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar29 en consecuencia
     if ($lugarSeleccionado29 === "OTRO") {
         $lugar29 = $_POST["29-ciudadEspecifica"];
     } else {
@@ -567,9 +509,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica30 = $_POST["30-vinilo"];
     $instalacion30 = $_POST["30-instalar"];
     $valor30 = $_POST["30-material-valor"];
-    //Obtener el valor de 30-lugar seleccionado
     $lugarSeleccionado30 = $_POST["30-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar30 en consecuencia
     if ($lugarSeleccionado30 === "OTRO") {
         $lugar30 = $_POST["30-ciudadEspecifica"];
     } else {
@@ -586,9 +526,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica31 = $_POST["31-vinilo"];
     $instalacion31 = $_POST["31-instalar"];
     $valor31 = $_POST["31-material-valor"];
-    //Obtener el valor de 31-lugar seleccionado
     $lugarSeleccionado31 = $_POST["31-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar31 en consecuencia
     if ($lugarSeleccionado31 === "OTRO") {
         $lugar31 = $_POST["31-ciudadEspecifica"];
     } else {
@@ -605,9 +543,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grafica32 = $_POST["32-vinilo"];
     $instalacion32 = $_POST["32-instalar"];
     $valor32 = $_POST["32-material-valor"];
-    //Obtener el valor de 32-lugar seleccionado
     $lugarSeleccionado32 = $_POST["32-lugar"];
-    // Verificar si se seleccionó "OTRO" y ajustar $lugar32 en consecuencia
     if ($lugarSeleccionado32 === "OTRO") {
         $lugar32 = $_POST["32-ciudadEspecifica"];
     } else {
@@ -656,7 +592,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //--------------------------------------------------------------------//
     
     //**ENVIO DEL MENSAJE */
-    $to = "arte@aranciopublicidad.cl"; // Reemplaza con tu dirección de correo
+    $to = "comiksamadesign@gmail.com;
     $subject = "Nuevo mensaje de Cotización del Condominio: ".$condominio;
 
     //----------------------------------------------------------------------//
